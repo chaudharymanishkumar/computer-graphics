@@ -24,7 +24,7 @@ def readinputs():
 	x2=input('x2 coordinate:')
 	y2=input('y2 coordinate:')
 	
-def Display1():
+def Display():
 	glClear(GL_COLOR_BUFFER_BIT)
 	lineDDA(x1,y1,x2,y1)
 	lineDDA(x2,y1,x2,y2)
@@ -38,7 +38,7 @@ def main():
 	glutInitWindowPosition(50,50)
 	glutCreateWindow("Rectangle")
 	readinputs()
-	glutDisplayFunc(Display1)
+	glutDisplayFunc(Display)
 	init()
 	glutMainLoop()	
 
