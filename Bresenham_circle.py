@@ -1,4 +1,6 @@
 #@MKchaudhary 15th sept 2018
+#Bresenham's circle drawing python opengl program
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
