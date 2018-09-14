@@ -1,5 +1,18 @@
-from import_basic import *
-
+''' 
+Midpoint circle drawing algorithm with given center and radius.
+Circle is symmetrical about its octant.so we need to consider about only one octant.from each pixel in that octant we can get all
+other corresponding seven pixels.'''
+#@MKchaudhary 27Aug 2018 
+from OpenGL.GL import *
+from OpenGL.GLU import *
+from OpenGL.GLUT import *
+def init():
+	glClearColor(0.0,1.0,1.0,0.0)
+	glColor3f(1.0,0.0,0.0)
+	glPointSize(2.0)
+	glMatrixMode(GL_PROJECTION)
+	glLoadIdentity()
+	gluOrtho2D(0.0,640.0,0.0,480.0)
 def readinput():
 	global xcenter,ycenter,radius
 	xcenter=input('xCenter:')
