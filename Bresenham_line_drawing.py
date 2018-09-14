@@ -1,4 +1,5 @@
-
+#Bresenham's line Drawing Algorithm for all slopes
+#@MKchaudhary 13sept 2018
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
