@@ -1,3 +1,7 @@
+#Cohensoutherland line clipping python program for clipping multiple line for a rectangular window.
+#DDA line drawing algorithm has been used to draw line.
+#@Mkchaudhary
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -17,7 +21,7 @@ def init():
 	glLoadIdentity()
 	gluOrtho2D(0.0,640.0,0.0,480.0)
 
-def read_window_input():                        # to taking dimension of rectangular clipping window
+def read_window_input():                        # for taking dimension of rectangular clipping window
 	global x_min,y_min,x_max,y_max
 	x_min = input("Enter x_min coordinate")
 	y_min = input("Enter y_min coordinate")
@@ -25,7 +29,7 @@ def read_window_input():                        # to taking dimension of rectang
 	y_max = input("Enter y_max coordinate")
 
 
-def multi_line_clip():
+def multi_line_clip():				#clipping function has been called for multiple line
 	while True:
 		x1 = input("Enter 1st x-coordinate")
 		y1 = input("Enter 1st y-coordinate")
@@ -39,7 +43,7 @@ def multi_line_clip():
 		else:
 			pass
 
-def lineclipping():
+def Display():
 	glClear(GL_COLOR_BUFFER_BIT)
 		
 	lineDDA(x_min,y_min,x_max,y_min)
@@ -126,7 +130,7 @@ def main():
 	glutInitWindowPosition(50,50)
 	glutCreateWindow("Plot Points")
 	read_window_input()
-	glutDisplayFunc(lineclipping)
+	glutDisplayFunc(Display)
 	init()
 	glutMainLoop()
 
