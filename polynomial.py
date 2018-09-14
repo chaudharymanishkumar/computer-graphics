@@ -1,3 +1,10 @@
+#Python program to draw polygon for given vertices.
+#polygon has been drawn by using 
+'''GL_LINE_LOOP
+Draws a connected group of line segments from the first vertexto the last,then back to the first.Vertices n and n+1 define line n.
+The last line, however, is defined by vertices N and 1. N lines are drawn.
+  '''
+# @MKchaudhary 13sept 2018
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
