@@ -7,11 +7,11 @@
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
-from gen_dda_import import *			#lineDDA() function has been imported through this file
+from gen_dda_import import *			               #lineDDA() function has been imported through this file
 import sys
 from math import * 
-matrix=[[0 for x in range(1)] for y in range(3)]    # 3*1 matrix to store homogenious point (x,y)
-composite_matrix=[[0 for x in range(3)] for y in range(3)]  # 3*3 composite matrix
+matrix=[[0 for x in range(1)] for y in range(3)]               # 3*1 matrix to store homogenious point (x,y)
+composite_matrix=[[0 for x in range(3)] for y in range(3)]     # 3*3 composite matrix
 def init():
 	glClearColor(0.0,1.0,1.0,0.0)
 	glColor3f(1.0,0.0,0.0)
