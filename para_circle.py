@@ -1,3 +1,5 @@
+#Parametric form of circle drawing
+#@MKchaudhary 15th sept 2018
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
