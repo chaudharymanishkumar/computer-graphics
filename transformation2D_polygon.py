@@ -1,9 +1,13 @@
 ''' 13 sept 2018 @M.k.chaudhary'''
+#Basic 2D transformation for polygon by using homogenous coordinate representation.
+#Concatenated transformation for different order and parameter.
+#Translation ,rotation with respect to pivot point ,scaling with respect to pivot point for polygon
+#DDA line drawing algorithm has been used to draw line.
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
-from gen_dda_import import *
+from gen_dda_import import *			#lineDDA() function has been imported through this file
 import sys
 from math import * 
 matrix=[[0 for x in range(1)] for y in range(3)]    # 3*1 matrix to store homogenious point (x,y)
