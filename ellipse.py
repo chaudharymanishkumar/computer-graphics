@@ -1,3 +1,7 @@
+#Midpoint Algorithm to draw ellipse.
+#Ellipse is symmetrical about  quadrants.
+#We need to consider about 1st quadrant of ellipse.All other three pixel we can get from corresponding pixel in 1st quadrant
+#@Mkchaudhary 14th Sept 2018
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -44,7 +48,6 @@ def ellipseMidpoint(xcenter,ycenter,rx,ry):
 			p+=ry*ry+px-py
 		ellipsePlotpoint(xcenter,ycenter,x,y)
 
-
 	p= ROUND(ry*ry*(x+0.5)*(x+0.5)+rx*rx*(y-1)*(y-1) - rx*rx*ry*ry)
 	while y > 0:
 		y=y-1
@@ -57,8 +60,6 @@ def ellipseMidpoint(xcenter,ycenter,rx,ry):
 			p+=rx*rx+px-py
 		ellipsePlotpoint(xcenter,ycenter,x,y)
 	
-		
-
 def ellipsePlotpoint(xcenter,ycenter,x,y):
 	setPixel(xcenter + x , ycenter + y)
 	setPixel(xcenter + x , ycenter - y)
