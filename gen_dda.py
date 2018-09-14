@@ -1,3 +1,4 @@
+#python code for DDA algorithm to draw line which is valid for all slopes(0,positive,negative,infity)
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
