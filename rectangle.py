@@ -1,3 +1,5 @@
+# Python program to draw rectangle using line DDA algorithm 
+# lineDDA() function has been imported from gen_dda_import.py file
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
