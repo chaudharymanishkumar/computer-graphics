@@ -1,3 +1,5 @@
+#Cubic spline curve using Hermite interpolation
+#@Mkchaudhary 16 sept 2018
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
