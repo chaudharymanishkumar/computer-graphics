@@ -1,4 +1,4 @@
-#Mkchaudhary 17sept 2018
+#Mkchaudhary 29th sept 2018
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -29,25 +29,25 @@ def read_controlpoint():
 		px[i]=input("Enter control point_x: ")
 		py[i]=input("Enter control point_y: ")
 
-def factorial(n):
+def factorial(n):					#to calculate factorial
 	if n==0:
 		return 1
 	else:
 		n=n*factorial(n-1) 
 	return n
 
-def Binomial_coefficient(n,k):
+def Binomial_coefficient(n,k):                                 #To calculate Binomial coefficient
 	result=factorial(n)/(factorial(n-k)*factorial(k))
 	return result
 
 def Bezier():
-	n=len(px)-1
+	n=len(px)-1   # n = no of control point -1
 	u=0.0
 	while u<=1.0:	
 		x=0.0
 		y=0.0
 		k=0
-		for k in range(n+1):
+		for k in range(n+1):     # 0 to n
 			x+=Binomial_coefficient(n,k)*pow(u,k)*pow(1-u,n-k)*px[k]
 			y+=Binomial_coefficient(n,k)*pow(u,k)*pow(1-u,n-k)*py[k]
 		setPixel(x,y)		
