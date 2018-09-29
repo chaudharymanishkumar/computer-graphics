@@ -46,7 +46,6 @@ def Bezier():
 	while u<=1.0:	
 		x=0.0
 		y=0.0
-		k=0
 		for k in range(n+1):     # 0 to n
 			x+=Binomial_coefficient(n,k)*pow(u,k)*pow(1-u,n-k)*px[k]
 			y+=Binomial_coefficient(n,k)*pow(u,k)*pow(1-u,n-k)*py[k]
