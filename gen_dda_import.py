@@ -3,7 +3,9 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
 import sys
-	
+def ROUND(a):
+	return int(a+0.5)
+
 def setPixel(xcoordinate,ycoordinate):
 	glBegin(GL_POINTS)
 	glColor3f(1.0,0.0,0.0)
