@@ -23,18 +23,18 @@ def init():
 
 def read_window_input():                        # for taking dimension of rectangular clipping window
 	global x_min,y_min,x_max,y_max
-	x_min = input("Enter x_min coordinate")
-	y_min = input("Enter y_min coordinate")
-	x_max = input("Enter  x_max coordinate")
-	y_max = input("Enter y_max coordinate")
+	x_min = input("Enter x_min coordinate: ")
+	y_min = input("Enter y_min coordinate: ")
+	x_max = input("Enter  x_max coordinate: ")
+	y_max = input("Enter y_max coordinate: ")
 
 
 def multi_line_clip():				#clipping function has been called for multiple line
 	while True:
-		x1 = input("Enter 1st x-coordinate")
-		y1 = input("Enter 1st y-coordinate")
-		x2 = input("Enter 2nd x-coordinate")
-		y2 = input("Enter 2nd y-coordinate")
+		x1 = input("Enter 1st x-coordinate: ")
+		y1 = input("Enter 1st y-coordinate: ")
+		x2 = input("Enter 2nd x-coordinate: ")
+		y2 = input("Enter 2nd y-coordinate: ")
 		cohensoutherlandclip(x1,y1,x2,y2)
 		print("Enter a decimal no other than 0 to continue")
 		check=int(input("Enter 0 to exit: "))
