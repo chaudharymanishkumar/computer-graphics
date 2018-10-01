@@ -74,6 +74,7 @@ def rotate(theta,refpoint_x,refpoint_y):
 	translate(-tx,-ty)
 	m=[[0 for x in range(3)] for y in range(3)]
 	matrix_set_identity(m)
+	theta=3.14159*(theta/180)
 	m[0][0]=cos(theta)
 	m[0][1]=-sin(theta)
 	m[1][0]=sin(theta)
