@@ -20,6 +20,15 @@ def init():						`
 	glLoadIdentity()
 	gluOrtho2D(0.0,640.0,0.0,480.0)
 
+def draw_axis():
+	glColor3f(0.0,0.0,0.0)
+	glBegin(GL_LINES)
+	glVertex2f(-300.0,0.0)
+	glVertex2f(300.0,0.0)
+	glVertex2f(0.0,-300.0)
+	glVertex2f(0.0,300.0)
+	glEnd()	
+
 def readinput_polygon():
 	global vertex_x,vertex_y
 	n=input("Enter no of vertices: ")
@@ -119,6 +128,7 @@ def transformation_polygon():
 	drawpolygon(vertex_x,vertex_y)
 def Display():
 	glClear(GL_COLOR_BUFFER_BIT)
+	draw_axis()
 	drawpolygon(vertex_x,vertex_y)
 	transformation_polygon()
 	
