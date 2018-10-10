@@ -119,7 +119,7 @@ def second_niddle(sec):
 def minute_niddle(mint):
 	glColor(0.0,0.0,0.0)
 	mx=mradius*cos((90-mint*6+6)*3.14/180)
-	my=sradius*sin((90-mint*6+6)*3.14/180)
+	my=mradius*sin((90-mint*6+6)*3.14/180)
 	lineDDA(0,0,mx,my)
 	glColor(1.0,0.0,0.0)
 	mx=mradius*cos((90-mint*6)*3.14/180) 
