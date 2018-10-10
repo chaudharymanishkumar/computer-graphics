@@ -59,13 +59,6 @@ def lineDDA(x0,y0,xEnd,yEnd):
 			y-=change_y
 		setPixel(x,y)
 
-
-def read_circle_input():
-	global xcenter,ycenter,radius
-	xcenter=input("Enter x_center: ")
-	ycenter=input("Enter y_center: ")
-	radius=input("Enter radius: ")
-
 def draw_circle(xcenter,ycenter,radius):
 	glColor(1.0,0.0,0.0)
 	theta=0
