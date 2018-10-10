@@ -1,3 +1,6 @@
+#MKChaudhary 10th october
+#Analog clock using python opengl
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -74,20 +77,10 @@ def draw_circle(xcenter,ycenter,radius):
 		theta+=0.5
 
 def glut_print( x,  y,  font,  text, r,  g , b , a):
-
-    blending = False 
-    if glIsEnabled(GL_BLEND) :
-        blending = True
-
-    glEnable(GL_BLEND)
     glColor3f(1,1,1)
     glRasterPos2f(x,y)
     for ch in text :
         glutBitmapCharacter( font , ctypes.c_int( ord(ch) ) )
-
-
-    if not blending :
-        glDisable(GL_BLEND) 
         
 def Draw():
     glut_print( 95+(-5) ,-165+(-5) , GLUT_BITMAP_9_BY_15 , "5" , 1.0 , 1.0 , 1.0 , 1.0 )
@@ -102,8 +95,7 @@ def Draw():
     glut_print(-165+(-5),-95+(-3) , GLUT_BITMAP_9_BY_15 , "8" , 1.0 , 1.0 , 1.0 , 1.0 )
     glut_print(-95+(-5),-165+(-5), GLUT_BITMAP_9_BY_15 , "7" , 1.0 , 1.0 , 1.0 , 1.0 )
     glut_print(-6,-190+(-5), GLUT_BITMAP_9_BY_15 , "6" , 1.0 , 1.0 , 1.0 , 1.0 )
-    # draw my scene ......
-    #glFlush()
+   
 
 def get_time():
 	global hr,mint,sec
@@ -143,18 +135,15 @@ def hour_niddle(hr):
 	hx=hradius*cos((90-hr*30)*3.14/180)
 	hy=hradius*sin((90-hr*30)*3.14/180)
 	lineDDA(0,0,hx,hy)
-	#glFlush()
 
 def clock():
 	get_time()
-	#print(mint)
 	while True:
 		get_time()
 		second_niddle(sec)
 		minute_niddle(mint)
 		hour_niddle(hr)
-		#glFlush()
-		#sleep(1)
+		
 		
 def Display():
 	glClear(GL_COLOR_BUFFER_BIT)
