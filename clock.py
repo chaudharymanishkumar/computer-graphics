@@ -1,5 +1,11 @@
 #MKChaudhary 10th october
 #Analog clock using python opengl
+#Here I am taking Circle with radius 200 and center (0,0).
+#Screen Coordinate is -300 to 300 along x-direction and -300 to 300 along y-direction.
+#Here I am using single buffer for animation.
+#Here i am reading system time and directly ploting that with second,minute and hour niddle.
+#Here i am drawing two line for each time ,one with background color for previous needle positio and one with specific color for new needle position.
+#Here i am using lineDDA() function to draw needle.we can use also other line drawing algorithm or simplest with glBegin(GL_LINES).
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -11,10 +17,10 @@ import sys
 
 xcenter=0
 ycenter=0
-radius=200
-hradius=100
-mradius=140
-sradius=170
+radius=200	#radius of circle
+hradius=100	#hour needle length
+mradius=140	#minute needle length
+sradius=170	#second needle length
 
 def ROUND(a):
 	return int(a+0.5)
@@ -30,7 +36,6 @@ def setPixel(x,y):
 	glBegin(GL_POINTS)
 	glVertex2f(x,y)
 	glEnd()
-	glutPostRedisplay()
 	glFlush()
 
 def lineDDA(x0,y0,xEnd,yEnd):
@@ -136,8 +141,7 @@ def clock():
 		second_niddle(sec)
 		minute_niddle(mint)
 		hour_niddle(hr)
-		
-		
+				
 def Display():
 	glClear(GL_COLOR_BUFFER_BIT)
 	draw_circle(xcenter,ycenter,radius)
@@ -149,9 +153,10 @@ def main():
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
 	glutInitWindowSize(600,600)
 	glutInitWindowPosition(50,50)
-	glutCreateWindow("Clock")
+	glutCreateWindow("Analog Clock")
 	glutDisplayFunc(Display)
 	init()
 	glutMainLoop()
 
 main()
+#if u are getting some error in executing this pgm then pls update me.
