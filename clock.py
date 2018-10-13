@@ -1,3 +1,5 @@
+#MKchaudhary 13th october 2018
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
@@ -27,7 +29,6 @@ def setPixel(x,y):
 	glBegin(GL_POINTS)
 	glVertex2f(x,y)
 	glEnd()
-	
 	glFlush()
 
 def lineDDA(x0,y0,xEnd,yEnd):
@@ -80,12 +81,9 @@ def glut_print( x,  y,  font,  text, r,  g , b , a):
         blending = True
 
     glEnable(GL_BLEND)
-    #glColor3f(1,1,1)
     glRasterPos2f(x,y)
     for ch in text :
         glutBitmapCharacter( font , ctypes.c_int( ord(ch) ) )
-
-
     if not blending :
         glDisable(GL_BLEND) 
         
@@ -105,7 +103,6 @@ def Draw():
     glut_print(-6,-190+(-5), GLUT_BITMAP_9_BY_15 , "6" , 1.0 , 1.0 , 1.0 , 1.0 )
     glut_print( -35 ,-250, GLUT_BITMAP_9_BY_15 , ":" , 1.0 , 1.0 , 1.0 , 1.0 )
     glut_print( 0 ,-250, GLUT_BITMAP_9_BY_15 , ":" , 1.0 , 1.0 , 1.0 , 1.0 )
-    # draw my scene ......
     glFlush()
 
 def get_time():
