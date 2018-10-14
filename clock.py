@@ -1,4 +1,6 @@
 #MKchaudhary 13th october 2018
+#Here i am using signal module to terminate program with the help of Ctrl+C.
+#we can terminate program with ctrl+c by using try and catch block concept
 
 from OpenGL.GL import *
 from OpenGL.GLU import *
@@ -7,16 +9,21 @@ from math import *
 from datetime import *
 from time import *
 import sys
+import signal
 
-xcenter=0
+xcenter=0	#centre of circle
 ycenter=0
-radius=200
-hradius=100
-mradius=140
-sradius=170
+radius=200	#radius of circle
+hradius=100	#length of hour needle
+mradius=140	#length of minute needle
+sradius=170	#length of second needle
 
 def ROUND(a):
 	return int(a+0.5)
+
+def signal_handler(sig, frame):		#to hanle signal generated due to CTRL+C
+        print('You pressed Ctrl+C! to terminate program')
+        sys.exit(0)
 
 def init():
 	glClearColor(0.0,0.0,0.0,0.0)
@@ -31,7 +38,7 @@ def setPixel(x,y):
 	glEnd()
 	glFlush()
 
-def lineDDA(x0,y0,xEnd,yEnd):
+def lineDDA(x0,y0,xEnd,yEnd):	#function to draw line
 	delta_x=xEnd-x0
 	delta_y=yEnd-y0
 	dx=abs(xEnd-x0)
@@ -57,14 +64,7 @@ def lineDDA(x0,y0,xEnd,yEnd):
 			y-=change_y
 		setPixel(x,y)
 
-
-def read_circle_input():
-	global xcenter,ycenter,radius
-	xcenter=input("Enter x_center: ")
-	ycenter=input("Enter y_center: ")
-	radius=input("Enter radius: ")
-
-def draw_circle(xcenter,ycenter,radius):
+def draw_circle(xcenter,ycenter,radius):	#function to draw circle using parametric form
 	glColor(1.0,0.0,0.0)
 	theta=0
 	while theta <=360:
@@ -75,18 +75,11 @@ def draw_circle(xcenter,ycenter,radius):
 		theta+=0.5
 
 def glut_print( x,  y,  font,  text, r,  g , b , a):
-
-    blending = False 
-    if glIsEnabled(GL_BLEND) :
-        blending = True
-
-    glEnable(GL_BLEND)
     glRasterPos2f(x,y)
     for ch in text :
-        glutBitmapCharacter( font , ctypes.c_int( ord(ch) ) )
-    if not blending :
-        glDisable(GL_BLEND) 
-        
+        glutBitmapCharacter( font , ctypes.c_int( ord(ch) ) ) 
+ 
+
 def Draw():
     glColor3f(0,1,1)
     glut_print( 95+(-5) ,-165+(-5) , GLUT_BITMAP_9_BY_15 , "5" , 1.0 , 1.0 , 1.0 , 1.0 )
@@ -103,7 +96,7 @@ def Draw():
     glut_print(-6,-190+(-5), GLUT_BITMAP_9_BY_15 , "6" , 1.0 , 1.0 , 1.0 , 1.0 )
     glut_print( -35 ,-250, GLUT_BITMAP_9_BY_15 , ":" , 1.0 , 1.0 , 1.0 , 1.0 )
     glut_print( 0 ,-250, GLUT_BITMAP_9_BY_15 , ":" , 1.0 , 1.0 , 1.0 , 1.0 )
-    glFlush()
+    #glFlush()
 
 def get_time():
 	global hr,mint,sec
@@ -116,7 +109,7 @@ def get_time():
 	
 def second_niddle(sec):
 	glColor(0.0,0.0,0.0)
-	lineDDA(0,0,-18.164716180901422, 169.02675257505038)
+	lineDDA(0,0,-18.164716180901422, 169.02675257505038)		#this is actually not required in program logic 
 	sx=sradius*cos((90-sec*6+6)*3.14/180) 
 	sy=sradius*sin((90-sec*6+6)*3.14/180)
 	lineDDA(0,0,sx,sy)
@@ -189,6 +182,7 @@ def Display():
 	
 
 def main():
+	signal.signal(signal.SIGINT, signal_handler)
 	glutInit(sys.argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB)
 	glutInitWindowSize(600,600)
