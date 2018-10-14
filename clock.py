@@ -148,7 +148,6 @@ def hour_niddle(hr):
 	lineDDA(0,0,hx,hy)
 
 def clock():
-	get_time()
 	while True:
 		get_time()
 		if sec ==0:
