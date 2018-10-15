@@ -225,8 +225,8 @@ def clipping():
 		window_input()
 		window_draw()
 		SHC(x_vertex,y_vertex)
-		iterator=input("y for continue and n for exit")
-		if iterator == 'y':
+		iterator=input("0 for continue and other decimal for exit")
+		if iterator == 0:
 			pass
 		else:
 			break
