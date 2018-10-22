@@ -1,7 +1,7 @@
 #MKchaudhary 13th october 2018
 #Here i am using signal module to terminate program with the help of Ctrl+C.
 #we can terminate program with ctrl+c by using try and catch block concept
-
+			'''Do not write this program for CG lab under vinod kumar p.p sir'''
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
