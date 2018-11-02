@@ -1,3 +1,9 @@
+
+
+'''A triangle PQR has its vertices located at P(80,50), Q(60,10),R(100,10). It is desired toobtain its reflection about an axis parallel to Y axis and passing through poit A(30,10). Write
+program do this transformation'''
+#@ Mk chaudhary
+
 from OpenGL.GL import *
 from OpenGL.GLU import *
 from OpenGL.GLUT import *
