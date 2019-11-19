@@ -1,2 +1,2 @@
 # computer-graphics
-Opengl computer graphics program in python
+Opengl computer graphics program in python.
