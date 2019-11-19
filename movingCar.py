@@ -30,10 +30,10 @@ def cir(t,tt):
 		m=int(r*math.cos(i*3.14/180.0))+cx
 		n=int(r*math.sin(i*3.14/180.0))+cy
 		glBegin(GL_POINTS)
-	
 		glVertex2f(m,n)
 		glEnd()
 	glFlush()
+	
 def cirb(m,mm):
 	global r,cx,cy
 	r=20
@@ -116,7 +116,6 @@ def l(t,tt):
 	glVertex2f(cx+r*math.cos(225*3.14/180),cy+r*math.sin(225*3.14/180))
 	glVertex2f(cx,cy)
 	glVertex2f(cx+r*math.cos(315*3.14/180),cy+r*math.sin(315*3.14/180))
-	
 	glEnd()
 	glFlush()
 	
@@ -139,11 +138,10 @@ def car(lt,lttt):
 	glVertex2f(lttt+20*math.cos(0*3.14/180)+20,160)
 	glVertex2f(lt+20*math.cos(180*3.14/180)-20,160)
 	glVertex2f(lt+20*math.cos(0*3.14/180),60+20*math.sin(0*3.14/180))
-	glVertex2f(lttt+20*math.cos(180*3.14/180),60+20*math.sin(180*3.14/180))
-	
-	
+	glVertex2f(lttt+20*math.cos(180*3.14/180),60+20*math.sin(180*3.14/180)	
 	glEnd()
 	glFlush()
+		   
 def carr(lt,lttt):
 	
 	glBegin(GL_LINES)
@@ -206,7 +204,7 @@ def main():
 	glutInitDisplayMode(GLUT_SINGLE| GLUT_RGB | GLUT_DEPTH )
 	glutInitWindowSize(800,800)
 	glutInitWindowPosition(10,10)
-	glutCreateWindow("clock")
+	glutCreateWindow("Moving Car")
 	
 	glutDisplayFunc(Display)
 	glutKeyboardFunc(keyboard)
